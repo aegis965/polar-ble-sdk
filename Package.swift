@@ -3,13 +3,16 @@ import PackageDescription
 
 let package = Package(
     name: "PolarBleSdk",
+    platforms: [
+        .iOS(.v12)
+    ],
     products: [
         .library(
             name: "PolarBleSdk",
             targets: ["PolarBleSdkTargets"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.0.0")
+        .package(url: "https://github.com/ReactiveX/RxSwift.git", .exact("6.0.0"))
     ],
     targets: [
         .binaryTarget(name: "PolarBleSdk", path: "polar-sdk-ios/PolarBleSdk.xcframework"),
